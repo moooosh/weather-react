@@ -1,0 +1,12 @@
+.App .Weather {
+    font-family: "Roboto";
+    width: 750px;
+    margin: 0 auto;
+    border-radius: 30px;
+    padding: 10px;
+    background: linear-gradient(
+      to right bottom,
+      rgba(171, 172, 184, 0.911),
+      rgba(2, 128, 128, 0.842)
+    );
+  }

@@ -1,0 +1,94 @@
+h1.heading {
+    margin-left: 30px;
+    margin-right: 10px;
+    font-size: 60px;
+    color: white;
+  }
+  
+  .form.mb-3.form.control {
+    border-radius: 30px;
+    background-color: yellow;
+  }
+  
+  .search-bar {
+    width: 300px;
+    margin-left: 70px;
+    margin-top: 20px;
+    border-radius: 30px;
+  }
+  
+  .submit-button,
+  .location-button {
+    margin-top: 15px;
+    width: 20px;
+    border-style: none;
+    background: transparent;
+  }
+  
+  .location-button {
+    margin-left: 20px;
+  }
+  
+  .main-details {
+    width: 40%;
+    margin: 5px;
+    padding: 20px;
+    border-radius: 40px;
+    text-align: center;
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.3)
+    );
+    color: white;
+  }
+  
+  .main-details:hover:before {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px #56bafd;
+    filter: blur(3px);
+  }
+  
+  .main-details:hover {
+    color: #2b8c97;
+    box-shadow: 0 0 15px white;
+    text-shadow: 0 0 15px #56bafd;
+  }
+  
+  p.city {
+    font-size: 40px;
+  }
+  
+  p.date,
+  p.time {
+    font-size: 15px;
+    display: inline;
+  }
+  
+  p.temperature {
+    margin-top: 20px;
+    font-size: 60px;
+  }
+  
+  .weather-image {
+    margin-top: 20px;
+  }
+  
+  .celsius,
+  .fahrenheit {
+    font-size: 12px;
+  }
+  
+  .metrics-container,
+  .col-4 {
+    font-size: 20px;
+    text-align: left;
+    padding: 0;
+  }
+  
+  ul {
+    list-style: none;
+    font-size: 20px;
+    text-align: left;
+  }
+  
