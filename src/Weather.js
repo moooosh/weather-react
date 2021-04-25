@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./weather.css"
+import "./weather.css";
+import Dates from "./Dates.js";
 
 export default function Weather() {
   
@@ -8,10 +9,7 @@ export default function Weather() {
   const [result, setResult] = useState(false);
   const [weather, setWeather] = useState({});
   const [position, setPosition] = useState({});
-  
  
-  
-
 
  
   function handleSubmit(event) {
@@ -59,7 +57,9 @@ export default function Weather() {
   let searchingIcons = {
     SubmitButton: "/images/Searching2.png",
     LocationButton: "/images/location2.png",
-    Icon: "/images/rainicon.png"
+    Icon: "/images/rainicon.png",
+    Sunrise: "/images/sunrise.png",
+    Sunset: "/images/sunset.png"
   }
 
   let form = (
@@ -141,31 +141,87 @@ return (
       </div>
 
       <div className="metrics-container">
-       <ul>
-          
+       <ul> 
         <li>{weather.type}</li>
-        
           <li>Humidity {weather.humidity}%</li>
           <li>Windspeed {weather.windspeed}km/h</li>
-         
         </ul>
+
+  
   </div>
+
+  <div className="sunrise">
+          <div className="col-3">
+          
+          <img src={searchingIcons.Sunrise} alt="sunrise" />
+          <h5>Sunrise</h5>
+          <h6>12:00</h6>
+        </div></div>
+
+        <div className="sunset">
+          <div className="col-3">
+          
+          <img src={searchingIcons.Sunset} alt="sunset" />
+          <h5>Sunset</h5>
+          <h6>5:00</h6>
+        </div></div>
+  
+  <div className="row">
   
   <div className="forecast-1">
-<div className="col-4">
-  <div className="row">
+  <div className="col">
 <p className="day">Mon</p>
 <p className="temp1">24°</p>
-<img src="./images/rainicon.png" alt="rain" />
-
+<img src="./images/rainicon.png" alt="rain" className="forecast-icon"/>
   </div>
 </div>
 
+<div className="forecast-2">
+<div className="col">
+<p className="day">Tue</p>
+<p className="temp1">24°</p>
+<img src="./images/rainicon.png" alt="rain" className="forecast-icon"/>
   </div>
-  
-Reminder - links.
-  
- </div></div>
+</div>
+
+<div className="forecast-3">
+<div className="col">
+<p className="day">Wed</p>
+<p className="temp1">24°</p>
+<img src="./images/rainicon.png" alt="rain" className="forecast-icon"/>
+</div>
+</div>
+
+<div className="forecast-4">
+<div className="col">
+<p className="day">Thu</p>
+<p className="temp1">24°</p>
+<img src="./images/rainicon.png" alt="rain" className="forecast-icon"/>
+  </div>
+</div>
+
+<div className="forecast-5">
+<div className="col">
+<p className="day">Fri</p>
+<p className="temp1">24°</p>
+<img src="./images/rainicon.png" alt="rain" className="forecast-icon"/>
+  </div>
+</div>
+
+<div className="forecast-6">
+<div className="col">
+<p className="day">Sat</p>
+<p className="temp1">24°</p>
+<img src={weather.icon} alt="rain" className="forecast-icon" />
+  </div>
+</div>
+
+
+</div>
+
+</div></div>
 );
 
 }
+
+

@@ -2,8 +2,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+
+
 export default function Dates() {
-const [date, setDate] = useState(null);
+const [date, setDate] = useState({});
 
   function formatDate(timestamp) {
     let now = new Date(timestamp);
@@ -14,6 +16,10 @@ const [date, setDate] = useState(null);
     let months = [ "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     let month = months[now.getMonth()];
 
-
+   return (
+       `${date}`
+   )
   }
+
+
 }
