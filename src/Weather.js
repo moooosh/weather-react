@@ -84,7 +84,7 @@ export default function Weather() {
       </div>
   );
   
-
+if (result) {
 return (
   <div className="Weather">
     <div className="top-bar">
@@ -220,7 +220,7 @@ return (
 
 </div></div>
 );
-
+}
 }
 
 
