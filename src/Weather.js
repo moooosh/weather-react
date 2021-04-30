@@ -7,7 +7,7 @@ export default function Weather() {
   const [city, setCity] = useState("");
   const [result, setResult] = useState(false);
   const [weather, setWeather] = useState({});
-  const [position, setPosition] = useState({});
+  //const [position, setPosition] = useState({});
  
 
  
@@ -19,24 +19,24 @@ export default function Weather() {
     axios.get(apiUrl).then(displayTemperature);
   }
 
-  function handlePosition(event) {
-    let apiKey="4594a157e6721a9920f32ed09fef95d6";
-    let units ="metric";
-    let apiUrl=`https://api.openweathermap.org/data/2.5/weather?lat=${position.lat}&lon=${position.long}&units=${units}&appid=${apiKey}`
-    axios.get(apiUrl).then(coordinateResponse);
-  }
+  //function handlePosition(event) {
+    //let apiKey="4594a157e6721a9920f32ed09fef95d6";
+    //let units ="metric";
+    //let apiUrl=`https://api.openweathermap.org/data/2.5/weather?lat=${position.lat}&lon=${position.long}&units=${units}&appid=${apiKey}`
+    //axios.get(apiUrl).then(coordinateResponse);
+  //}
 
   function updateCity(event) {
     setCity(event.target.value);
    
   }
 
-  function coordinateResponse(response) {
-    setPosition({
-    lat: position.coord.latitude,
-    long: position.coord.longitude
-  });
-}
+  //function coordinateResponse(response) {
+  //  setPosition({
+   // lat: position.coord.latitude,
+  //  long: position.coord.longitude
+ // });
+//}
 
 
 
@@ -76,7 +76,7 @@ export default function Weather() {
             <img src={searchingIcons.SubmitButton} alt="submit" />
           </button>
 
-          <button className="location-button" type="click" onClick={handlePosition}>
+          <button className="location-button" type="click" >
             <img src={searchingIcons.LocationButton} alt="location" />
           </button>
    
@@ -84,7 +84,7 @@ export default function Weather() {
       </div>
   );
   
-
+if (result) { 
 return (
   <div className="Weather">
     <div className="top-bar">
@@ -141,7 +141,7 @@ return (
 
       <div className="metrics-container">
        <ul> 
-        <li>{weather.type}</li>
+        <li className="text-capitalize">{weather.type}</li>
           <li>Humidity {weather.humidity}%</li>
           <li>Windspeed {weather.windspeed}km/h</li>
         </ul>
@@ -221,6 +221,14 @@ return (
 </div></div>
 );
 
-}
+} else {
 
+    let apiKey = "4594a157e6721a9920f32ed09fef95d6";
+    let city = "Brisbane";
+    let units = "metric";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(displayTemperature);
+  return "Loading......"
+}
+}
 
