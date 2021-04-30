@@ -13,11 +13,11 @@ function App() {
     <strong>
       {" "}
       Code by Shanese Mattiske |{" "}
-      <a href="/" target="_blank">
+      <a href="/" target="_blank" rel="noreferrer">
         Netlify App
       </a>{" "}
       |{" "}
-      <a href="https://github.com/moooosh/weather-react" target="_blank">
+      <a href="https://github.com/moooosh/weather-react" target="_blank" rel="noreferrer">
         GitHub
       </a>
     </strong>
