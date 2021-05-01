@@ -6,10 +6,20 @@ import "./weather.css";
 export default function Weather(props) {
   
   const [city, setCity] = useState("");
-
   const [weather, setWeather] = useState({ result: false });
  
-
+  function displayTemperature(response) {
+    setWeather({
+      result: true,
+      date: new Date(response.data.dt * 1000),
+      temperature: response.data.main.temp,
+      temperaturemin: response.data.main.temp_min,
+      humidity: response.data.main.humidity,
+      windspeed: response.data.wind.speed,
+      type: response.data.weather[0].description,
+      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    });
+  }
   function handleSubmit(event) {
     event.preventDefault();
     let apiKey = "4594a157e6721a9920f32ed09fef95d6";
@@ -23,20 +33,7 @@ export default function Weather(props) {
   }
 
 
-  function displayTemperature(response) {
-    setWeather({
-      result:true,
-      name: response.data,
-      date: new Date(response.data.dt * 1000),
-
-      temperature: response.data.main.temp,
-      temperaturemin: response.data.main.temp_min,
-      humidity: response.data.main.humidity,
-      windspeed: response.data.wind.speed,
-      type: response.data.weather[0].description,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    });
-  }
+  
 
   let searchingIcons = {
     SubmitButton: "/images/Searching2.png",
@@ -97,8 +94,7 @@ return (
             </div>
             <div className="col-6">
             <p className="time">
-              <FormattedDates date={weather.hours} />:
-              <FormattedDates date={weather.minutes} />
+           2:00
             </p>
     </div></div>
 
