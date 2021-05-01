@@ -13,7 +13,6 @@ export default function FormattedDates(props) {
     ];
 
     let day = weekDays[props.date.getDay()];
-    
 
     let month = [
       "January",
@@ -51,12 +50,10 @@ export default function FormattedDates(props) {
       }
     }
 
-  
-
-
+    
    return (
        <div>
-       {day} {date} {months} 
+       {day} {date} {months}
        </div>
    )
   }
