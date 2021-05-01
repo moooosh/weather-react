@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import FormattedDates from "./FormattedDates.js"
+import FormattedDates from "./FormattedDates.js";
+import FormattedTimes from "./FormattedTimes.js";
 import axios from "axios";
 import "./weather.css";
 
@@ -12,6 +13,7 @@ export default function Weather(props) {
     setWeather({
       result: true,
       date: new Date(response.data.dt * 1000),
+      time: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       temperaturemin: response.data.main.temp_min,
       humidity: response.data.main.humidity,
@@ -94,7 +96,7 @@ return (
             </div>
             <div className="col-6">
             <p className="time">
-           2:00
+           <FormattedTimes time={weather.time}/>
             </p>
     </div></div>
 
