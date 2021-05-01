@@ -32,19 +32,18 @@ export default function FormattedDates(props) {
 
     let months = month[props.date.getMonth()];
 
-    
 
     let date = props.date.getDate();
-    if (date === 1, 21, 31) {
-      date = `${date}st`;
+    if (date === 1) {
+      date= `${date}st`
     } else {
-      if (date === 2, 22) {
+      if (date === 2) {
         date = `${date}nd`
       } else {
-        if (date === 3, 23) {
+        if (date === 3) {
           date = `${date}rd`
         } else {
-          if (date === 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 24, 25, 26, 27, 28, 29, 30) {
+          if (date > 4) {
             date = `${date}th`
           }
         }
