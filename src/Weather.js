@@ -1,16 +1,15 @@
 import React, { useState } from "react";
+import FormattedDates from "./FormattedDates.js"
 import axios from "axios";
 import "./weather.css";
 
-export default function Weather() {
+export default function Weather(props) {
   
   const [city, setCity] = useState("");
-  const [result, setResult] = useState(false);
-  const [weather, setWeather] = useState({});
-  //const [position, setPosition] = useState({});
+
+  const [weather, setWeather] = useState({ result: false });
  
 
- 
   function handleSubmit(event) {
     event.preventDefault();
     let apiKey = "4594a157e6721a9920f32ed09fef95d6";
@@ -19,31 +18,17 @@ export default function Weather() {
     axios.get(apiUrl).then(displayTemperature);
   }
 
-  //function handlePosition(event) {
-    //let apiKey="4594a157e6721a9920f32ed09fef95d6";
-    //let units ="metric";
-    //let apiUrl=`https://api.openweathermap.org/data/2.5/weather?lat=${position.lat}&lon=${position.long}&units=${units}&appid=${apiKey}`
-    //axios.get(apiUrl).then(coordinateResponse);
-  //}
-
   function updateCity(event) {
     setCity(event.target.value);
-   
   }
-
-  //function coordinateResponse(response) {
-  //  setPosition({
-   // lat: position.coord.latitude,
-  //  long: position.coord.longitude
- // });
-//}
-
 
 
   function displayTemperature(response) {
-    setResult(true);
     setWeather({
+      result:true,
       name: response.data,
+      date: new Date(response.data.dt * 1000),
+
       temperature: response.data.main.temp,
       temperaturemin: response.data.main.temp_min,
       humidity: response.data.main.humidity,
@@ -84,8 +69,9 @@ export default function Weather() {
       </div>
   );
   
-if (result) { 
+if (weather.result) { 
 return (
+
   <div className="Weather">
     <div className="top-bar">
     <div className="row">
@@ -105,10 +91,15 @@ return (
     
     <div className="row">
           <div className="col-6">
-            <p className="date">11 Feb 20</p>
+            <p className="date"> 
+            <FormattedDates date={weather.date}/>
+              </p>
             </div>
             <div className="col-6">
-            <p className="time">12:00</p>
+            <p className="time">
+              <FormattedDates date={weather.hours} />:
+              <FormattedDates date={weather.minutes} />
+            </p>
     </div></div>
 
     <div className="row">
@@ -228,7 +219,8 @@ return (
     let units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(displayTemperature);
-  return "Loading......"
+  
+    return "Loading......";
 }
 }
 

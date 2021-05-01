@@ -8,7 +8,7 @@ import "./weather.css"
 function App() {
   return (
     <div className="App">
-    <Weather />
+    <Weather defaultCity="Brisbane" />
 
     <strong>
       {" "}
