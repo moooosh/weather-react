@@ -2,7 +2,7 @@ import React from "react";
 
 
 export default function FormattedDates(props) {
-    let days = [
+    let weekDays = [
       "Sunday",
       "Monday",
       "Tuesday",
@@ -12,7 +12,8 @@ export default function FormattedDates(props) {
       "Saturday"
     ];
 
-    let day = days[props.date.getDay()];
+    let day = weekDays[props.date.getDay()];
+    
 
     let month = [
       "January",
@@ -35,7 +36,7 @@ export default function FormattedDates(props) {
 
     let date = props.date.getDate();
     if (date === 1) {
-      date= `${date}st`
+      date = `${date}st`
     } else {
       if (date === 2) {
         date = `${date}nd`
