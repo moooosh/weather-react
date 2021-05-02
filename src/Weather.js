@@ -7,7 +7,7 @@ import "./weather.css";
 
 export default function Weather(props) {
   
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState(props.defaultCity);
   const [weather, setWeather] = useState({ result: false });
  
   function displayTemperature(response) {
@@ -146,7 +146,7 @@ return (
           
           <img src={searchingIcons.Sunrise} alt="sunrise" />
           <h5>Sunrise</h5>
-          <h6>{weather.sunrise}</h6>
+          <h6><FormattedTimes time={weather.sunrise}/></h6>
         </div></div>
 
         <div className="sunset">
@@ -154,7 +154,7 @@ return (
           
           <img src={searchingIcons.Sunset} alt="sunset" />
           <h5>Sunset</h5>
-          <h6>{weather.sunset}</h6>
+          <h6><FormattedTimes time={weather.sunset}/></h6>
         </div></div>
   
   <div className="row">
