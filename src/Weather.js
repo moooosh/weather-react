@@ -21,6 +21,8 @@ export default function Weather(props) {
       windspeed: response.data.wind.speed,
       type: response.data.weather[0].description,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      sunrise: new Date(response.data.sys.sunrise * 1000),
+      sunset: new Date(response.data.sys.sunset * 1000)
     });
   }
   function handleSubmit(event) {
@@ -144,7 +146,7 @@ return (
           
           <img src={searchingIcons.Sunrise} alt="sunrise" />
           <h5>Sunrise</h5>
-          <h6>5:00</h6>
+          <h6>{weather.sunrise}</h6>
         </div></div>
 
         <div className="sunset">
@@ -152,7 +154,7 @@ return (
           
           <img src={searchingIcons.Sunset} alt="sunset" />
           <h5>Sunset</h5>
-          <h6>14:00</h6>
+          <h6>{weather.sunset}</h6>
         </div></div>
   
   <div className="row">
