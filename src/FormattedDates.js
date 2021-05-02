@@ -35,21 +35,14 @@ export default function FormattedDates(props) {
 
     let date = props.date.getDate();
     if (date === 1) {
-      date = `${date}st`
+      date = `${date}st`;
+    } else if (date === 2) {
+      date = `${date}nd`;
+    } else if (date === 3) {
+      date = `${date}rd`;
     } else {
-      if (date === 2) {
-        date = `${date}nd`
-      } else {
-        if (date === 3) {
-          date = `${date}rd`
-        } else {
-          if (date > 4) {
-            date = `${date}th`
+      date = `${date}th`;
           }
-        }
-      }
-    }
-
     
    return (
        <div>

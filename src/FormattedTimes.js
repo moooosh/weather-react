@@ -2,7 +2,7 @@ import React from "react";
 
 
 export default function FormattedTimes(props) {
-
+    
     let hours = props.time.getHours();
     if (hours < 10) {
       hours = `0${hours}`;
@@ -18,5 +18,4 @@ export default function FormattedTimes(props) {
             {hours}:{minutes}
         </div>
     );
-
-}
+    }
