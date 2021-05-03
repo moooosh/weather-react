@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import FormattedDates from "./FormattedDates.js";
-import FormattedTimes from "./FormattedTimes.js";
+
+import WeatherData from "./WeatherData.js";
 
 import axios from "axios";
 import "./weather.css";
@@ -13,6 +13,7 @@ export default function Weather(props) {
   function displayTemperature(response) {
     setWeather({
       result: true,
+      city: response.data.name,
       date: new Date(response.data.dt * 1000),
       time: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
@@ -25,12 +26,17 @@ export default function Weather(props) {
       sunset: new Date(response.data.sys.sunset * 1000)
     });
   }
-  function handleSubmit(event) {
-    event.preventDefault();
+  
+  function search() {
     let apiKey = "4594a157e6721a9920f32ed09fef95d6";
     let units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(displayTemperature);
+  }
+  
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
   }
 
   function updateCity(event) {
@@ -81,146 +87,18 @@ return (
     <h1 className="heading">WEATHER</h1>
     </div>
 {form}
+<WeatherData data={weather} />
 </div>
 </div>
 
-<div className="row">
-<div className="main-details">
-  <div className="col-6">
-    <div className="row">
-    <p className="city">{city}</p>
-    </div></div>
-    
-    <div className="row">
-          <div className="col-6">
-            <p className="date"> 
-            <FormattedDates date={weather.date}/>
-              </p>
-            </div>
-            <div className="col-6">
-            <p className="time">
-           <FormattedTimes time={weather.time}/>
-            </p>
-    </div></div>
-
-    <div className="row">
-          <div className="col-6">
-            <p className="temperature">{Math.round(weather.temperature)}°</p>
-          </div>
-
-          <div className="col-6">
-            <img
-              className="weather-image"
-              src={weather.icon}
-              alt={weather.type}/>
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-3">
-            <a href="/" id="celsius" class="active">
-              C°
-            </a>
-          </div>
-
-          <div className="col-3">
-            <a href="/" id="fahrenheit">
-              F°
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div className="metrics-container">
-       <ul> 
-        <li className="text-capitalize">{weather.type}</li>
-          <li>Humidity {weather.humidity}%</li>
-          <li>Windspeed {weather.windspeed}km/h</li>
-        </ul>
-
-  
-  </div>
-
-  <div className="sunrise">
-          <div className="col-3">
-          
-          <img src={searchingIcons.Sunrise} alt="sunrise" />
-          <h5>Sunrise</h5>
-          <h6><FormattedTimes time={weather.sunrise}/></h6>
-        </div></div>
-
-        <div className="sunset">
-          <div className="col-3">
-          
-          <img src={searchingIcons.Sunset} alt="sunset" />
-          <h5>Sunset</h5>
-          <h6><FormattedTimes time={weather.sunset}/></h6>
-        </div></div>
-  
-  <div className="row">
-  
-  <div className="forecast-1">
-  <div className="col">
-<p className="day">Mon</p>
-<p className="temp1">24°</p>
-<img src="./images/rainicon.png" alt="rain" className="forecast-icon"/>
-  </div>
-</div>
-
-<div className="forecast-2">
-<div className="col">
-<p className="day">Tue</p>
-<p className="temp1">24°</p>
-<img src="./images/rainicon.png" alt="rain" className="forecast-icon"/>
-  </div>
-</div>
-
-<div className="forecast-3">
-<div className="col">
-<p className="day">Wed</p>
-<p className="temp1">24°</p>
-<img src="./images/rainicon.png" alt="rain" className="forecast-icon"/>
-</div>
-</div>
-
-<div className="forecast-4">
-<div className="col">
-<p className="day">Thu</p>
-<p className="temp1">24°</p>
-<img src="./images/rainicon.png" alt="rain" className="forecast-icon"/>
-  </div>
-</div>
-
-<div className="forecast-5">
-<div className="col">
-<p className="day">Fri</p>
-<p className="temp1">24°</p>
-<img src="./images/rainicon.png" alt="rain" className="forecast-icon"/>
-  </div>
-</div>
-
-<div className="forecast-6">
-<div className="col">
-<p className="day">Sat</p>
-<p className="temp1">24°</p>
-<img src={weather.icon} alt="rain" className="forecast-icon" />
-  </div>
-</div>
 
 
 </div>
-
-</div></div>
 );
 
 } else {
 
-    let apiKey = "4594a157e6721a9920f32ed09fef95d6";
-    let city = "Brisbane";
-    let units = "metric";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-    axios.get(apiUrl).then(displayTemperature);
-  
+    search();
     return "Loading......";
 }
 }
