@@ -43,17 +43,6 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
-
-  
-
-  let searchingIcons = {
-    SubmitButton: "/images/Searching2.png",
-    LocationButton: "/images/location2.png",
-    Icon: "/images/rainicon.png",
-    Sunrise: "/images/sunrise.png",
-    Sunset: "/images/sunset.png"
-  }
-
   let form = (
  
         <div className="col-6">
@@ -66,11 +55,11 @@ export default function Weather(props) {
             />
 
           <button className="submit-button" type="submit" >
-            <img src={searchingIcons.SubmitButton} alt="submit" />
+            <img src="./images/searching2.png" alt="submit" />
           </button>
 
           <button className="location-button" type="click" >
-            <img src={searchingIcons.LocationButton} alt="location" />
+            <img src="./images/location2.png" alt="location" />
           </button>
    
       </form>
