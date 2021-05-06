@@ -2,6 +2,7 @@ import React from "react";
 import FormattedDates from "./FormattedDates.js";
 import FormattedTimes from "./FormattedTimes.js";
 
+import "./weather.css"
 
 export default function WeatherData(props) {
 
@@ -80,60 +81,8 @@ return (
           <h6><FormattedTimes time={props.data.sunset}/></h6>
         </div></div>
   
-  <div className="row">
-  
-  <div className="forecast-1">
-  <div className="col">
-<p className="day">Mon</p>
-<p className="temp1">24°</p>
-<img src="./images/rainicon.png" alt="rain" className="forecast-icon"/>
-  </div>
-</div>
-
-<div className="forecast-2">
-<div className="col">
-<p className="day">Tue</p>
-<p className="temp1">24°</p>
-<img src="./images/rainicon.png" alt="rain" className="forecast-icon"/>
-  </div>
-</div>
-
-<div className="forecast-3">
-<div className="col">
-<p className="day">Wed</p>
-<p className="temp1">24°</p>
-<img src="./images/rainicon.png" alt="rain" className="forecast-icon"/>
+ 
 </div>
 </div>
-
-<div className="forecast-4">
-<div className="col">
-<p className="day">Thu</p>
-<p className="temp1">24°</p>
-<img src="./images/rainicon.png" alt="rain" className="forecast-icon"/>
-  </div>
-</div>
-
-<div className="forecast-5">
-<div className="col">
-<p className="day">Fri</p>
-<p className="temp1">24°</p>
-<img src="./images/rainicon.png" alt="rain" className="forecast-icon"/>
-  </div>
-</div>
-
-<div className="forecast-6">
-<div className="col">
-<p className="day">Sat</p>
-<p className="temp1">24°</p>
-<img src={props.data.icon} alt="rain" className="forecast-icon" />
-  </div>
-</div>
-
-
-</div>
-</div>
-</div>
-
 )
 }

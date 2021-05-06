@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import WeatherData from "./WeatherData.js";
-
+import Forecast from "./Forecast.js"
 import axios from "axios";
 import "./weather.css";
 
@@ -77,6 +77,7 @@ return (
     </div>
 {form}
 <WeatherData data={weather} />
+<Forecast />
 </div>
 </div>
 
