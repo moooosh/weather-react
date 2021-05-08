@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ForecastDaily from "./ForecastDaily.js";
 import "./Forecast.css"
@@ -12,6 +12,9 @@ export default function Forecast(props) {
         setResult(true);
     }
 
+    useEffect(() => {
+        setResult(false);
+    }, [props.coordinates]);
         
       
 if (result) {
