@@ -44,45 +44,40 @@ export default function Weather(props) {
     setCity(event.target.value);
   }
 
-  let form = (
- 
-        <div className="col-6">
-          <form className="mb-3.form-control" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              placeholder="Search your location"
-              autoComplete="off"
-              onChange={updateCity}
-            />
-
-          <button className="submit-button" type="submit" >
-            <img src="./images/searching2.png" alt="submit" />
-          </button>
-
-         
-   
-      </form>
-      </div>
-  );
+  
   
 if (weather.result) { 
 return (
 
   <div className="Weather">
-    <div className="top-bar">
     <div className="row">
-      <div className="col-6">
-    <h1 className="heading">WEATHER</h1>
+      <div className="col-5">
+    <h1>WEATHER</h1>
     </div>
-{form}
+   
+          <form onSubmit={handleSubmit}>
+     <div className="col-5">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Search your location"
+              autoComplete="off"
+              onChange={updateCity}
+            /> </div>
+   
+       <div className="col-2">
+        <input type="image" src="./images/searching2.png" alt="submit" className="search-button" />
+        </div>
+      </form>
+      </div>
 <WeatherData data={weather} />
 <Forecast coordinates={weather.coordinates}/>
 </div>
-</div>
 
 
 
-</div>
+
+
 );
 
 } else {
