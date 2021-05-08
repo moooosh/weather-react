@@ -39,19 +39,10 @@ return (
            
         </div> </div>
 
-        <div className="row">
-          <div className="col-3">
-            <a href="/" id="celsius" class="active">
-              C°
-            </a>
-          </div>
+     
 
-          <div className="col-3">
-            <a href="/" id="fahrenheit">
-              F°
-            </a>
-          </div>
-        </div>
+        
+   
       </div>
 
       <div className="metrics-container">
