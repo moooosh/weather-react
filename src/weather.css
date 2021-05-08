@@ -61,17 +61,17 @@ h1.heading {
     text-shadow: 0 0 15px #56bafd;
   }
   
-  p.city {
+  .city {
     font-size: 40px;
   }
   
-  p.date,
-  p.time {
+  .date,
+  .time {
     font-size: 15px;
     display: inline;
   }
   
-  p.temperature {
+  .temperature {
     margin-top: 20px;
     font-size: 60px;
   }

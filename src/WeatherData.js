@@ -13,24 +13,24 @@ return (
 <div className="main-details">
   <div className="col-6">
     <div className="row">
-    <p className="city">{props.data.city}</p>
+    <div className="city">{props.data.city}</div>
     </div></div>
     
     <div className="row">
           <div className="col-6">
-            <p className="date"> 
+            <div className="date"> 
             <FormattedDates date={props.data.date}/>
-              </p>
+              </div>
             </div>
             <div className="col-6">
-            <p className="time">
+            <div className="time">
            <FormattedTimes time={props.data.time}/>
-            </p>
+            </div>
     </div></div>
 
     <div className="row">
           <div className="col-6">
-            <p className="temperature">{Math.round(props.data.temperature)}°</p>
+            <div className="temperature">{Math.round(props.data.temperature)}°</div>
           </div>
 
           <div className="col-6">
@@ -38,11 +38,6 @@ return (
 
            
         </div> </div>
-
-     
-
-        
-   
       </div>
 
       <div className="metrics-container">

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import WeatherData from "./WeatherData.js";
-import WeatherIcon from "./WeatherIcon.js"
 import Forecast from "./Forecast.js"
 import axios from "axios";
 import "./weather.css";
@@ -60,9 +59,7 @@ export default function Weather(props) {
             <img src="./images/searching2.png" alt="submit" />
           </button>
 
-          <button className="location-button" type="click" >
-            <img src="./images/location2.png" alt="location" />
-          </button>
+         
    
       </form>
       </div>
