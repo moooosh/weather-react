@@ -3,6 +3,7 @@ import FormattedDates from "./FormattedDates.js";
 import FormattedTimes from "./FormattedTimes.js";
 
 import "./weather.css"
+import WeatherIcon from "./WeatherIcon.js";
 
 export default function WeatherData(props) {
 
@@ -33,12 +34,10 @@ return (
           </div>
 
           <div className="col-6">
-            <img
-              className="weather-image"
-              src={props.data.icon}
-              alt={props.data.type}/>
-          </div>
-        </div>
+        <WeatherIcon code={props.data.icon} size={80} />
+
+           
+        </div> </div>
 
         <div className="row">
           <div className="col-3">

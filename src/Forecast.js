@@ -1,20 +1,53 @@
-import React from "react";
-
+import React, { useState } from "react";
+import axios from "axios";
+import ForecastDaily from "./ForecastDaily.js";
 import "./Forecast.css"
 
-export default function Forecast() {
+export default function Forecast(props) {
+    const [result, setResult] = useState(false);
+    const [forecast, setForecast] = useState(null);
+
+    function handleForecast(response) {
+        setForecast(response.data.daily);
+        setResult(true);
+    }
+
+        
+      
+if (result) {
 return (
     <div className="forecast-weekly">
     <div className="row">
     <div className="col">
-  <p className="forecast-day">Mon</p>
-  <p className="forecast-temperature">24°</p>
-  <img src="./images/rainicon.png" alt="rain" className="forecast-icon"/>
-    </div>
-  </div>
-</div>
-  
- 
-)
+   <ForecastDaily data={forecast[0]} />
+   </div>
+   <div className="col">
+   <ForecastDaily data={forecast[1]} />
+   </div>
+   <div className="col">
+   <ForecastDaily data={forecast[2]} />
+   </div>
+   <div className="col">
+   <ForecastDaily data={forecast[3]} />
+   </div>
+   <div className="col">
+   <ForecastDaily data={forecast[4]} />
+   </div>
+   <div className="col">
+   <ForecastDaily data={forecast[5]} />
+   </div>
+   </div></div>
+);
+
+} else {
+    let apiKey = "4594a157e6721a9920f32ed09fef95d6";
+    let units = "metric";
+    let latitude = props.coordinates.lat;
+    let longitude = props.coordinates.lon;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(handleForecast);
+    
+    return null;
+}  
 
 }

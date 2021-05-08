@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import WeatherData from "./WeatherData.js";
+import WeatherIcon from "./WeatherIcon.js"
 import Forecast from "./Forecast.js"
 import axios from "axios";
 import "./weather.css";
@@ -16,12 +17,13 @@ export default function Weather(props) {
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
       time: new Date(response.data.dt * 1000),
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       temperaturemin: response.data.main.temp_min,
       humidity: response.data.main.humidity,
       windspeed: response.data.wind.speed,
       type: response.data.weather[0].description,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       sunrise: new Date(response.data.sys.sunrise * 1000),
       sunset: new Date(response.data.sys.sunset * 1000)
     });
@@ -77,7 +79,7 @@ return (
     </div>
 {form}
 <WeatherData data={weather} />
-<Forecast />
+<Forecast coordinates={weather.coordinates}/>
 </div>
 </div>
 

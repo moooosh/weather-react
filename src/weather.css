@@ -1,3 +1,5 @@
+
+
 h1.heading {
     margin-left: 30px;
     margin-right: 10px;
@@ -23,14 +25,6 @@ h1.heading {
     width: 50px;
     border-style: none;
     background: transparent;
-  
-  }
-
-  img:hover {
-    color: #2b8c97;
-    box-shadow: 0 0 40px white;
-    text-shadow: 0 0 40px #56bafd;
-    border-radius: 60px;
   
   }
   
@@ -82,9 +76,7 @@ h1.heading {
     font-size: 60px;
   }
   
-  .weather-image {
-    margin-top: 20px;
-  }
+
   
   .celsius,
   .fahrenheit {
@@ -122,38 +114,6 @@ h1.heading {
     color: #2b8c97;
     box-shadow: 0 0 15px white;
     text-shadow: 0 0 15px #56bafd;
-  }
-
-  .forecast-1, .forecast-2, .forecast-3, .forecast-4, .forecast-5, .forecast-6 {
-    margin-top: 20px;
-    margin-left: 35px;
-    border-radius: 30px;
-    width: 90px;
-    text-align: center;
-    background: linear-gradient(
-      to right bottom,
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.3)
-    );
-    color: white;
-
-  }
-
- 
-  .forecast-1:hover:before, .forecast-2:hover:before, .forecast-3:hover:before, .forecast-4:hover:before, .forecast-5:hover:before, .forecast-6:hover:before{
-    transform: scale(1.2);
-    box-shadow: 0 0 15px #56bafd;
-    filter: blur(3px);
-  }
-  
-  .forecast-1:hover, .forecast-2:hover, .forecast-3:hover, .forecast-4:hover, .forecast-5:hover, .forecast-6:hover {
-    color: #2b8c97;
-    box-shadow: 0 0 15px white;
-    text-shadow: 0 0 15px #56bafd;
-  }
-
-  img.forecast-icon {
-    width: 50px;
   }
 
 
