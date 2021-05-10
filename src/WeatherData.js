@@ -53,14 +53,14 @@ return (
 <div className="sun-information">
     <div className="row">
         <div className="col-6">
-          <img src="./images/sunrise.png" alt="sunrise" />
+          <img src="./images/sunrise2.png" alt="sunrise" />
           <h5><strong>Sunrise</strong></h5>
           <h6><FormattedTimes time={props.data.sunrise}/>am</h6>
         </div>
 
      
         <div className="col-6">
-          <img src="./images/sunset.png" alt="sunset" />
+          <img src="./images/sunset2.png" alt="sunset" />
           <h5><strong>Sunset</strong></h5>
           <h6><FormattedTimes time={props.data.sunset}/>pm</h6>
         </div>
