@@ -52,23 +52,26 @@ return (
   <div className="Weather">
     <div className="row">
       <div className="col-5">
-    <h1>WEATHER</h1>
+    <h1><strong>WEATHER</strong></h1>
     </div>
-   
+
+   <div className="search-bar">
+          
           <form onSubmit={handleSubmit}>
-     <div className="col-5">
-            <input
+          <input
               type="text"
               className="form-control"
               placeholder="Search your location"
               autoComplete="off"
               onChange={updateCity}
-            /> </div>
+            /> 
+      </form>      
+    </div>
    
-       <div className="col-2">
+<div className="submit">
         <input type="image" src="./images/searching2.png" alt="submit" className="search-button" />
         </div>
-      </form>
+      
       </div>
 <WeatherData data={weather} />
 <Forecast coordinates={weather.coordinates}/>

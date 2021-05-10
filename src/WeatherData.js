@@ -11,9 +11,10 @@ return (
     <div className="weather-data">
     <div className="row">
 <div className="main-details">
-  <div className="col-6">
-    <div className="row">
-    <div className="city">{props.data.city}</div>
+<div className="row">
+     <div className="col-12">
+    
+    <div className="city"><strong>{props.data.city}</strong></div>
     </div></div>
     
     <div className="row">
