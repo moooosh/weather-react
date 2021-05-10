@@ -49,24 +49,22 @@ return (
 
   
   </div>
-
-  <div className="sunrise">
-          <div className="col-3">
-          
+<div className="sun-information">
+    <div className="row">
+        <div className="col-6">
           <img src="./images/sunrise.png" alt="sunrise" />
-          <h5>Sunrise</h5>
-          <h6><FormattedTimes time={props.data.sunrise}/></h6>
-        </div></div>
+          <h5><strong>Sunrise</strong></h5>
+          <h6><FormattedTimes time={props.data.sunrise}/>am</h6>
+        </div>
 
-        <div className="sunset">
-          <div className="col-3">
-          
+     
+        <div className="col-6">
           <img src="./images/sunset.png" alt="sunset" />
-          <h5>Sunset</h5>
-          <h6><FormattedTimes time={props.data.sunset}/></h6>
-        </div></div>
-  
- 
+          <h5><strong>Sunset</strong></h5>
+          <h6><FormattedTimes time={props.data.sunset}/>pm</h6>
+        </div>
+        </div>
+        </div>
 </div>
 </div>
 )

@@ -1,9 +1,11 @@
 
-  .forecast-weekly {
-    margin-top: 20px;
-    margin-left: 35px;
+  .forecast-1, .forecast-2, .forecast-3, .forecast-4, .forecast-5, .forecast-6, .forecast-7 {
+    margin-top: 10px;
+    margin-left: 20px;
     border-radius: 30px;
-    width: 90px;
+    width: 100px;
+    height: 110px;
+ 
     text-align: center;
     background: linear-gradient(
       to right bottom,
@@ -14,17 +16,4 @@
 
   }
 
- 
-  .forecast-weekly:hover:before {
-    transform: scale(1.2);
-    box-shadow: 0 0 15px #56bafd;
-    filter: blur(3px);
-  }
-  
-  .forecast-weekly:hover {
-    color: #2b8c97;
-    box-shadow: 0 0 15px white;
-    text-shadow: 0 0 15px #56bafd;
-  }
 
- 

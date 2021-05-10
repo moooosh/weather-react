@@ -1,113 +1,139 @@
 h1 {
-    font-size: 65px;
-    color: white;
-  }
+  font-size: 65px;
+  color: white;
+}
 
 
- input.form-control {
-   width: 280px;
-   height: 50px;
-   margin-top: 10px;
-   border-radius: 30px;
-   background-color: transparent
- }
-
- input {
-   background-color: transparent;
- }
-  
-input.image{
-    margin-top: 15px;
-    width: 50px;
-    border-style: none;
-    background: transparent;
-  
-  }
-  
-  
- 
-  
-  .main-details {
-    width: 30%;
-    margin: 5px;
-    margin-left: 20px;
-    padding: 20px;
-    border-radius: 40px;
-    text-align: center;
-    background: linear-gradient(
-      to right bottom,
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.3)
-    );
-    color: white;
-  }
-  
-  .main-details:hover:before {
-    transform: scale(1.2);
-    box-shadow: 0 0 15px #56bafd;
-    filter: blur(3px);
-  }
-  
-  .main-details:hover {
-    color: #2b8c97;
-    box-shadow: 0 0 15px white;
-    text-shadow: 0 0 15px #56bafd;
-  }
-  
-  .city {
-    font-size: 40px;
-  }
-  
-  .date,
-  .time {
-    font-size: 15px;
-    display: inline;
-  }
-  
-  .temperature {
-    margin-top: 20px;
-    font-size: 60px;
-  }
-  
-
-  
-  .celsius,
-  .fahrenheit {
-    font-size: 12px;
-  }
-
-  .metrics-container {
-    width: 30%;
-    margin: 5px;
-    padding: 20px;
-    border-radius: 40px;
-    text-align: center;
-    background: linear-gradient(
-      to right bottom,
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.3)
-    );
-    color: white;
-  }
-
-  ul {
-    list-style: none;
-    font-size: 20px;
-    margin: 0;
-    padding-left: 0;
-  }
-  
-  .metrics-container:hover:before {
-    transform: scale(1.2);
-    box-shadow: 0 0 15px #56bafd;
-    filter: blur(3px);
-  }
-  
-  .metrics-container:hover {
-    color: #2b8c97;
-    box-shadow: 0 0 15px white;
-    text-shadow: 0 0 15px #56bafd;
-  }
+input.form-control {
+ width: 280px;
+ height: 50px;
+ margin-top: 10px;
+ border-radius: 30px;
+ background-color: transparent
+}
 
 
- 
+input.search-button{
+  margin-top: 15px;
+  width: 50px;
+  border-style: none;
+  background: transparent;
+
+}
+
+
+
+
+.main-details {
+  width: 228px;
+  height: 250px;
+  margin: 5px;
+  margin-left: 20px;
+  padding: 20px;
+  border-radius: 40px;
+  text-align: center;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  color: white;
+}
+
+.main-details:hover:before {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #56bafd;
+  filter: blur(3px);
+}
+
+.main-details:hover {
+  color: #2b8c97;
+  box-shadow: 0 0 15px white;
+  text-shadow: 0 0 15px #56bafd;
+}
+
+.city {
+  font-size: 40px;
+}
+
+.date,
+.time {
+  font-size: 15px;
+  display: inline;
+}
+
+.temperature {
+  margin-top: 20px;
+  font-size: 60px;
+}
+
+
+
+.metrics-container {
+  width: 228px;
+  height: 250px;
+  margin: 5px;
+  padding: 20px;
+  border-radius: 40px;
+  text-align: center;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  color: white;
+}
+
+ul {
+  list-style: none;
+  font-size: 20px;
+  margin: 0;
+  padding-left: 0;
+}
+
+.metrics-container:hover:before {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #56bafd;
+  filter: blur(3px);
+}
+
+.metrics-container:hover {
+  color: #2b8c97;
+  box-shadow: 0 0 15px white;
+  text-shadow: 0 0 15px #56bafd;
+}
+
+.sun-information {
+  width: 30%;
+  margin: 5px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 40px;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  color: white;
+}
+
+.sun-information img {
+  width: 80px;
+}
+
+.sun-information h5 {
+  margin-top: 20px;
+}
+
+
+.sun-information:hover:before {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #56bafd;
+  filter: blur(3px);
+}
+
+.sun-information:hover {
+  color: #2b8c97;
+  box-shadow: 0 0 15px white;
+  text-shadow: 0 0 15px #56bafd;
+}

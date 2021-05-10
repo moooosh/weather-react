@@ -26,7 +26,7 @@ return (
       
       <div>
 
-<div className="forecast-day">{day()}
+<div className="forecast-day"><h5>{day()}</h5>
     </div>
       
 <div className="forecast-temperature">

@@ -21,22 +21,23 @@ if (result) {
 return (
     <div className="forecast-weekly">
     <div className="row">
-    <div className="col">
+    <div className="forecast-1">
    <ForecastDaily data={forecast[0]} />
    </div>
-   <div className="col">
+
+   <div className="forecast-2">
    <ForecastDaily data={forecast[1]} />
    </div>
-   <div className="col">
+   <div className="forecast-3">
    <ForecastDaily data={forecast[2]} />
    </div>
-   <div className="col">
+   <div className="forecast-4">
    <ForecastDaily data={forecast[3]} />
    </div>
-   <div className="col">
+   <div className="forecast-5">
    <ForecastDaily data={forecast[4]} />
    </div>
-   <div className="col">
+   <div className="forecast-6">
    <ForecastDaily data={forecast[5]} />
    </div>
    </div></div>
